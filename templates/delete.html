@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block title %} Delete
+Contact {% endblock title %} {% block content %}
+<div class="container">
+  <h2 class="heading font-weight-light text-center">
+    Delete Contact Details: {{contact}}
+  </h2>
+  <hr />
+</div>
+<div class="container w-25 card p-4 mt-4">
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %} {{form|crispy}}
+    <input
+      type="submit"
+      value="Delete User"
+      class="btn btn-danger px-5"
+      style="color: black; background-color: #dc3545 !important;
+    width: 100%;"
+    />
+  </form>
+</div>
+
+{% endblock content %}
